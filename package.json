@@ -8,16 +8,32 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/vue-fontawesome": "^2.0.2",
+    "@progress/kendo-map-vue-wrapper": "^2021.1.119",
+    "@progress/kendo-theme-default": "^4.32.0",
+    "@progress/kendo-ui": "^2021.1.119",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-here-maps": "^1.0.1",
+    "vue-router": "^3.5.1",
+    "vue-static-map": "^3.0.2",
+    "vuetify": "^2.4.3",
+    "vuex": "^3.6.2",
+    "x5-gmaps": "^0.3.31"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
+    "deepmerge": "^1.5.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "sass": "^1.32.5",
+    "sass-loader": "^10.1.1",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
@@ -39,6 +55,5 @@
     "last 2 versions",
     "not dead"
   ],
-  "_id": "test-vue-install@0.1.0",
   "readme": "ERROR: No README data found!"
 }
