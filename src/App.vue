@@ -3,8 +3,8 @@
     <v-app-bar app dense fixed>
       <v-toolbar-title>
         <v-icon>mdi-headphones</v-icon>
-        <router-link to="/" tag="span" style="cursor: pointer">
-          {{ appTitle }}
+        <router-link to="/" custom v-slot="{ navigate }">
+          <span @click="navigate" @keypress.enter="navigate" role="link">{{ appTitle }}</span>
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -20,14 +20,12 @@
     </v-main>
   </v-app>
 </template>
-
 <script>
-
 export default {
   name: "App",
   data(){
     return {
-      appTitle: 'VUEMUSIC',
+      appTitle: 'Vue Music',
       sidebar: false,
       menuItems: [
           { title: 'Home', path: '/' },
@@ -38,6 +36,3 @@ export default {
   },
 };
 </script>
-<style>
-
-</style>
