@@ -17,6 +17,7 @@
 </template>
 <script>
   export default {
+    name: "Myfooter",
     data: () => ({
       icons: [
         'mdi-facebook',

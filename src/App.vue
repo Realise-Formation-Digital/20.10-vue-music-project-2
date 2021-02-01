@@ -1,39 +1,22 @@
 <template>
   <v-app>
-    <v-app-bar app dense fixed>
-      <v-toolbar-title>
-        <!-- logo -->
-        <img src="./images/logo.png" alt="logo app" style="height: 50px;">
-        <router-link to="/" custom v-slot="{ navigate }">
-          <span @click="navigate" @keypress.enter="navigate" role="link">{{ appTitle }}</span>
-        </router-link>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn text v-for="item in menuItems" :key="item.title" :to="item.path">
-          <v-icon left dark>{{ item.icon }}</v-icon>
-          {{ item.title }}
-        </v-btn>
-      </v-toolbar-items> 
-    </v-app-bar>
+    <Myheader></Myheader>
     <v-main>
       <router-view></router-view>
     </v-main>
+    <Myfooter></Myfooter>
   </v-app>
 </template>
 <script>
+import Myheader from "./components/Myheader.vue";
+import Myfooter from './components/Myfooter.vue';
+
 export default {
+  components: { 
+    Myheader,
+    Myfooter
+   },
   name: "App",
-  data(){
-    return {
-      appTitle: 'Vue Music',
-      sidebar: false,
-      menuItems: [
-          { title: 'Home', path: '/' },
-          { title: 'About Us', path: '/about' },
-          { title: 'Hot Tracks', path: '/hottracks' }
-     ]
-    }
-  },
+
 };
 </script>
