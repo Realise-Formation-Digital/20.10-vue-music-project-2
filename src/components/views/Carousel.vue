@@ -23,6 +23,9 @@
           {
             src: require('../../images/carousel2.jpg'),
           },
+          {  
+            src: require('../../images/carousel3.jpeg'),
+          },  
         ],
       }
     },

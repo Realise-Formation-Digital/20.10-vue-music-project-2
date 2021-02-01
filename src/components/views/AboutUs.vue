@@ -115,7 +115,10 @@
     <br />
     <br />
     <br />
-</div>
+    <br />
+    <br />
+    <br />
+    </div>
 </template>
 
 <script>
