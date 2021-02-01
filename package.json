@@ -20,7 +20,9 @@
     "vue": "^2.6.11",
     "vue-here-maps": "^1.0.1",
     "vue-router": "^3.5.1",
+    "vue-socket.io": "^3.0.10",
     "vue-static-map": "^3.0.2",
+    "vuelidate": "^0.7.6",
     "vuetify": "^2.4.3",
     "vuex": "^3.6.2",
     "x5-gmaps": "^0.3.31"

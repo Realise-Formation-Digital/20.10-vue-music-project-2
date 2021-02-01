@@ -1,125 +1,170 @@
 <template>
-  <v-app>
-    <v-container pa-10>
-      <v-layout row>
-        <v-flex md6 >
-          <v-card dark tile flat color="teal">
-            <v-card-text>
-               <h2>ABOUT VUEMUSIC</h2>
-               <p>VUEMUSIC is one of the most trusted production music libraries in the world. With a wide variety of high-quality music 
-   and world-class customer service, we have clients from all over the world who use our music in everything from personal 
-   web videos to major network television broadcasts and major feature films.  In addition to the music that we provide to 
-   our clients, VUEMUSIC also has been at the forefront of innovations in the music industry since its inception in 2001.</p>
-               <p>In 2013 VUEMUSIC entered into an agreement with YouTube that revolutionizes how people use music and videos on the internet. 
-   Under this new agreement, all the tracks in the VUEMUSIC library will be FREE for use on YouTube (personal use only).</p>
-               <v-form
-    ref="form"
-    v-model="valid"
-    lazy-validation
-  >
-    <v-text-field
-      v-model="name"
-      :counter="40"
-      :rules="nameRules"
-      label="Name"
-      required
-    ></v-text-field>
-
-    <v-text-field
-      v-model="email"
-      :rules="emailRules"
-      label="E-mail"
-      required
-    ></v-text-field>
-
-    <v-text-field
-      v-model="message"
-      :counter="50"
-      :rules="messageRules"
-      label="Message"
-      required
-    ></v-text-field>
-
-    <v-checkbox
-      v-model="checkbox"
-      :rules="[v => !!v || 'You must agree to continue!']"
-      label="Do you agree?"
-      required
-    ></v-checkbox>
-
-    <v-btn
-      :disabled="!valid"
-      color="success"
-      class="mr-4"
-      @click="validate"
-    >
-      Validate
-    </v-btn>
-
-    <v-btn
-      color="error"
-      class="mr-4"
-      @click="reset"
-    >
-      Reset Form
-    </v-btn>
-
-    <v-btn
-      color="warning"
-      @click="resetValidation"
-    >
-      Reset Validation
-    </v-btn>
-  </v-form>
-            </v-card-text>
-          </v-card>
-        </v-flex>
-        <v-flex md6>
-          <v-card dark tile flat color="blue darken-4">
-            <v-card-text>
-               <p>Most importantly, we here at VUEMUSIC care deeply about the music we provide and the customers who utilize our services. 
-   We've designed our website to provide the most accessible and easy-to-understand licensing process possible, and our hands-on 
-   customer support is always glad to assist whenever needed.</p>
-            </v-card-text>
-          </v-card>
-        </v-flex>
-      </v-layout> 
-    </v-container>
-  </v-app>
+<div class="container pt-3 my-auto">
+    <div class="row">
+        <div class="col-md-12" style="background-color:black;">
+            <div align="center"><img src="../../images/about-us.png"></div>
+        </div>
+    </div>
+    <div class="row" style="background-color:crimson;">
+        <div class="col-md-3">
+            <div align="center"><img src="../../images/scrum-master.png" class="rounded-circle">
+            <h3>Scrum Master</h3>
+            <h4>Ms Aurélie</h4></div>
+        </div>
+        <div class="col-md-3">
+            <div align="center"><img src="../../images/scrum-master1.png" class="rounded-circle">
+            <h3>Scrum Master Assistant</h3>
+            <h4>Mr Brusk</h4></div>
+        </div>
+        <div class="col-md-3">
+            <div align="center"><img src="../../images/product-owner.png" class="rounded-circle">
+            <h3>Product Owner</h3>
+            <h4>Mr Lahouari</h4></div>
+        </div>
+        <div class="col-md-3">
+            <div align="center"><img src="../../images/developer.png" class="rounded-circle">
+            <h3>Web Development Team</h3>
+            <h4>Mr Ruben - Mr Simon</h4></div>
+        </div>
+    </div>
+   <div class="row">
+       <div class="col-md-6" style="background-color:black;">
+           <div class="row justify-content-center">
+               <div class="col-12">
+                    <div class="card border-primary rounded-0">
+                        <div class="card-header p-0">
+                            <div class="bg-info text-white text-center py-2">
+                                <h3><i class="fa fa-envelope"></i> Send Us a Message - We Want to Meet You!</h3>
+                                <p class="m-0">Vue Music</p>
+                                <p>We value relationships – with each other, and with the businesses we partner with. 
+                                   Give us a call today at +41 777-666-555 or fill out the form here to learn about our 
+                                   team, and find out how we can work with you to help your business grow!</p>
+                            </div>
+                        </div>
+                        <div class="card-body p-3">
+                            <form @submit.prevent="handleSubmit">
+                                <div class="form-group">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="fa fa-user text-info"></i></div>
+                                        </div>
+                                        <input type="text" v-model="user.name" id="name" name="name" class="form-control" :class="{ 'is-invalid': submitted && $v.user.name.$error }" />
+                                        <div v-if="submitted && !$v.user.name.required" class="invalid-feedback">Name is required</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="fa fa-envelope text-info"></i></div>
+                                        </div>
+                                        <input type="email" v-model="user.email" id="email" name="email" class="form-control" :class="{ 'is-invalid': submitted && $v.user.email.$error }" />
+                                        <div v-if="submitted && $v.user.email.$error" class="invalid-feedback">
+                                        <span v-if="!$v.user.email.required">Email is required</span>
+                                        <span v-if="!$v.user.email.email">Email is invalid</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="fa fa-comment text-info"></i></div>
+                                        </div>
+                                        <textarea v-model="user.message" id="message" name="message" class="form-control" :class="{ 'is-invalid': submitted && $v.user.message.$error }" />
+                                        <div v-if="submitted && !$v.user.message.required" class="invalid-feedback">Message is required</div>
+                                    </div>
+                                </div>
+                                <div class="form-group text-center">
+                                    <input type="submit" value="Submit" class="btn btn-info btn-block rounded-0 py-2">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" style="background-color:black;">
+	<div class="row justify-content-center">
+		<div class="col-12">
+            <div align="center" class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=rue%20viguet%208%20gen%C3%A8ve&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com"></a><br><a href="https://www.embedgooglemap.net"></a></div></div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="row" style="background-color:crimson;">
+        <div align="center" class="col-md-4">
+            <span class="diff-font text-white"><h5>STAY IN TOUCH</h5></span><br />
+            <span class="text-white"> +41 777-666-555</span>
+        </div>
+        <div align="center" class="col-md-4">
+            <span class="diff-font text-white"><h5>LOCATION</h5></span><br />
+            <span class="text-white">Rue Viguet 8</span><br />
+            <span class="text-white">1227 Geneva</span><br />
+            <span class="text-white">Switzerland</span>            
+        </div>
+        <div class="col-md-4">
+            <span class="diff-font text-white"><h5>TEAM</h5></span><br />
+            <span class="text-white"><i class="fa fa-envelope text-info"></i> Ms Aurélie</span><br />
+            <span class="text-white"><i class="fa fa-envelope text-info"></i> Mr Brusk</span><br />
+            <span class="text-white"><i class="fa fa-envelope text-info"></i> Mr Lahouari</span><br />
+            <span class="text-white"><i class="fa fa-envelope text-info"></i> Mr Ruben</span><br />
+            <span class="text-white"><i class="fa fa-envelope text-info"></i> Mr Simon</span>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
 </template>
+
 <script>
-  export default {
-    data: () => ({
-      valid: true,
-      name: '',
-      nameRules: [
-        v => !!v || 'Name is required',
-        v => (v && v.length <= 40) || 'Name must be less than 40 characters',
-      ],
-      email: '',
-      emailRules: [
-        v => !!v || 'E-mail is required',
-        v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
-      ],
-      message: '',
-      messageRules: [
-        v => !!v || 'Message is required',
-        v => (v && v.length >= 50) || 'Message must be more than 50 characters',
-      ],
-      checkbox: false,
-    }),
+import { required, email } from 'vuelidate/lib/validators';
+import { validationMixin } from 'vuelidate'
 
-    methods: {
-      validate () {
-        this.$refs.form.validate()
-      },
-      reset () {
-        this.$refs.form.reset()
-      },
-      resetValidation () {
-        this.$refs.form.resetValidation()
-      },
-    },
-  }
+    export default {
+        mixins: [validationMixin],
+        name: "app",
+        data() {
+            return {
+                user: {
+                    name: "",
+                    email: "",
+                    message: ""
+                },
+                submitted: false
+            };
+        },
+        validations: {
+            user: {
+                name: { required },
+                email: { required, email },
+                message: { required }
+            }
+        },
+        methods: {
 
+            // eslint-disable-next-line no-unused-vars
+            handleSubmit(e) {
+                this.submitted = true;
+
+                // stop here if form is invalid
+                this.$v.$touch();
+                if (this.$v.$invalid) {
+                    return;
+                }
+
+                alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.user));
+            }
+        }
+    };
 </script>
+<style>
+iframe {
+    width:100%;height:100%;
+    }
+.gmap_canvas {
+    overflow:hidden;background:none!important;height:500px;width:500px;
+    }
+
+</style>
