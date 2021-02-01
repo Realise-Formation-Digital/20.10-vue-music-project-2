@@ -2,7 +2,8 @@
   <v-app>
     <v-app-bar app dense fixed>
       <v-toolbar-title>
-        <v-icon>mdi-headphones</v-icon>
+        <!-- logo -->
+        <img src="./images/logo.png" alt="logo app" style="height: 50px;">
         <router-link to="/" custom v-slot="{ navigate }">
           <span @click="navigate" @keypress.enter="navigate" role="link">{{ appTitle }}</span>
         </router-link>
