@@ -10,7 +10,7 @@
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn text v-for="item in menuItems" :key="item.title" :to="item.path">
-          <v-icon left dark>{{ item.icon }}</v-icon>
+          <v-icon left color="#eb5950" >{{ item.icon }}</v-icon>
           {{ item.title }}
         </v-btn>
       </v-toolbar-items> 
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import { mdiHome, mdiAccountMusicOutline, mdiFireAlert   } from "@mdi/js";
+
 export default {
     name: "Myheader",
     data(){
@@ -25,9 +27,9 @@ export default {
       appTitle: 'Vue Music',
       sidebar: false,
       menuItems: [
-          { title: 'Home', path: '/' },
-          { title: 'About Us', path: '/about' },
-          { title: 'Hot Tracks', path: '/hottracks' }
+          { icon: mdiHome,  title: 'Home', path: '/' },
+          { icon: mdiAccountMusicOutline , title: 'About Us', path: '/about' },
+          { icon: mdiFireAlert,  title: 'Hot Tracks', path: '/hottracks' }
      ]
     }
   },
