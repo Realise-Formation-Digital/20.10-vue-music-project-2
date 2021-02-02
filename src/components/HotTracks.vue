@@ -29,14 +29,17 @@ beforeMount() {
 methods: {
     async getTracks() {
       try{
-        return await axios.get('https://cors-anywhere.herokuapp.com/https://openwhyd.org/hot/electro?format=json');
+        const result = await axios.get('https://cors-anywhere.herokuapp.com/https://openwhyd.org/hot/electro?format=json');
+        console.log("data Fetched", result)
+        //this.tracks = result.data.tracks
+        return result.data.tracks
       }catch(e){
         console.log(e)
       }
     },
     async getHotTracks() {
       const response = await this.getTracks();
-      this.tracks = response.data.results;
+      this.tracks = response;
     },
     
   }
