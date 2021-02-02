@@ -11,6 +11,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/vue-fontawesome": "^2.0.2",
+    "@mdi/js": "^5.9.55",
     "@progress/kendo-map-vue-wrapper": "^2021.1.119",
     "@progress/kendo-theme-default": "^4.32.0",
     "@progress/kendo-ui": "^2021.1.119",
