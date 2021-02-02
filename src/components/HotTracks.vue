@@ -29,7 +29,7 @@ beforeMount() {
 methods: {
     async getTracks() {
       try{
-        return await axios.get('https://openwhyd.org/hot?format=json');
+        return await axios.get('https://cors-anywhere.herokuapp.com/https://openwhyd.org/hot/electro?format=json');
       }catch(e){
         console.log(e)
       }
