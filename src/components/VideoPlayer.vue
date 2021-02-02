@@ -1,5 +1,5 @@
 <template>
-<div class="container-fluid py-5 px-10" style="background-color:black;">
+<div class="container-fluid py-10 px-10" style="background-color:black;">
   <div class="row video-player">
     <div class="col-md-5 video-container embed-responsive embed-responsive-4by3">
       <iframe width="720" height="1153" class="embed-responsive-item" :src="this.activeVideo.youtubeURL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
