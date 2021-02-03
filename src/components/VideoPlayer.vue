@@ -1,15 +1,9 @@
 <template>
 <div class="container-fluid py-10 px-10" style="background-color:black;">
   <div class="row video-player">
-    <div class="col-md-5 video-container embed-responsive embed-responsive-4by3">
-      <iframe width="720" height="1153" class="embed-responsive-item" :src="this.activeVideo.youtubeURL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="col-md-7 video-container embed-responsive embed-responsive-4by3">
+      <iframe width="720" height="600" class="embed-responsive-item" :src="this.activeVideo.youtubeURL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>  
-    <div class="col-md-2">
-        <h3>{{this.activeVideo.title}}</h3>
-        <p>{{this.activeVideo.views}} views</p>
-        <p><button class="fa fa-thumbs-up" @click="addLike"></button>   {{this.activeVideo.likes}} </p>
-        <p><button class="fa fa-thumbs-down" @click="removeLike"></button>   {{this.activeVideo.dislikes}} </p>
-    </div>
     <div class="col-md-4 video-list" style="background-color:white;">
       <div @click="chooseVideo(video)" :key="video.id" v-for="video in videos" class="thumbnail">
         <div class="thumbnail-img shadow p-3 mb-5 bg-white rounded">
@@ -23,12 +17,19 @@
           <button class="fa fa-play crimson"></button>
         </div>
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+    </div>
+  </div>
+  <div>
+    <div class="col-md-12">
+        <h3>{{this.activeVideo.title}}</h3>
+        <p>{{this.activeVideo.views}} views</p>
+        <p><button class="fa fa-thumbs-up" @click="addLike"></button>   {{this.activeVideo.likes}}
+        <button class="fa fa-thumbs-down" @click="removeLike"></button>   {{this.activeVideo.dislikes}} </p>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
     </div>
   </div>
 </div>
@@ -39,17 +40,17 @@ let videos = [
   {
     id: 1,
     title: "GNAT (Directed by Cole Bennett)",
-    thumbnail: "https://i.ytimg.com/vi/EosMazKaPbU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBr2bd2lhBfpOOeEc2lAh86D0fjfw",
+    thumbnail: "https://i2.wp.com/nobetterlane.com/wp-content/uploads/2020/12/eminem-gnat-video.jpg?resize=1035%2C425&ssl=1",
     youtubeURL: "https://www.youtube.com/embed/EosMazKaPbU?list=PLyORnIW1xT6waC0PNjAMj33FdK2ngL_ik",
     creator: "Eminem",
     likes: 2200,
     dislikes: 220,
     views: 22000
   },
-    {
+  {
     id: 2,
     title: "GIRL LIKE ME (Official Music Video)",
-    thumbnail: "https://i.ytimg.com/vi/vMLk_T0PPbk/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAShf9CYHNBFB9Fiz9YMUGviIrGtQ",
+    thumbnail: "https://s3.amazonaws.com/images.imvdb.com/video/302288359725-black-eyed-peas-girl-like-me_music_video_ov.jpg?v=2",
     youtubeURL: "https://www.youtube.com/embed/vMLk_T0PPbk?list=PLyORnIW1xT6waC0PNjAMj33FdK2ngL_ik",
     creator: "Black Eyed Peas, Shakira",
     songlength: "3:54",
@@ -57,11 +58,10 @@ let videos = [
     dislikes: 110,
     views: 11000
   },
-
   {
     id: 3,
     title: "AVEC TA ZOUZ (Clip Officiel)",
-    thumbnail: "https://i.ytimg.com/an_webp/CPgS_VcLKT8/mqdefault_6s.webp?du=3000&sqp=CI-644AG&rs=AOn4CLBbYrx0_a-NJy70MeE6AB9twCBbvA",
+    thumbnail: "https://i.ytimg.com/vi/CPgS_VcLKT8/maxresdefault.jpg",
     youtubeURL: "https://www.youtube.com/embed/CPgS_VcLKT8",
     creator: "Therapie TAXI",
     likes: 3300,
@@ -71,7 +71,7 @@ let videos = [
   {
     id: 4,
     title: "Bohemian Rhapsody (Official Video Remastered)",
-    thumbnail: "https://i.ytimg.com/an_webp/fJ9rUzIMcZQ/mqdefault_6s.webp?du=3000&sqp=CNy14oAG&rs=AOn4CLCLqbk8IBkzIeLKjGMDz4_1w54Tsg",
+    thumbnail: "https://lescultivores.com/wp-content/uploads/2020/10/bohemian-rhapsody-intro.jpg",
     youtubeURL: "https://www.youtube.com/embed/fJ9rUzIMcZQ",
     creator: "Queen",
     likes: 4400,
@@ -81,7 +81,7 @@ let videos = [
   {
     id: 5,
     title: "Sweet Dreams (Are Made Of This) (Official Video)",
-    thumbnail: "https://i.ytimg.com/an_webp/qeMFqkcPYcg/mqdefault_6s.webp?du=3000&sqp=CMDJ4oAG&rs=AOn4CLAtf-N3__1xDYSDnSsEYfpiW-h75Q",
+    thumbnail: "https://stack.com.au/wp-content/uploads/2020/03/Eurythmics_DavidMontgomery.jpg",
     youtubeURL: "https://www.youtube.com/embed/qeMFqkcPYcg",
     creator: "Eurythmics, Annie Lennox, Dave Stewart",
     likes: 5500,
