@@ -36,8 +36,18 @@
 
 <script>
 let videos = [
-    {
+  {
     id: 1,
+    title: "GNAT (Directed by Cole Bennett)",
+    thumbnail: "https://i.ytimg.com/vi/EosMazKaPbU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBr2bd2lhBfpOOeEc2lAh86D0fjfw",
+    youtubeURL: "https://www.youtube.com/embed/EosMazKaPbU?list=PLyORnIW1xT6waC0PNjAMj33FdK2ngL_ik",
+    creator: "Eminem",
+    likes: 2200,
+    dislikes: 220,
+    views: 22000
+  },
+    {
+    id: 2,
     title: "GIRL LIKE ME (Official Music Video)",
     thumbnail: "https://i.ytimg.com/vi/vMLk_T0PPbk/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAShf9CYHNBFB9Fiz9YMUGviIrGtQ",
     youtubeURL: "https://www.youtube.com/embed/vMLk_T0PPbk?list=PLyORnIW1xT6waC0PNjAMj33FdK2ngL_ik",
@@ -47,16 +57,7 @@ let videos = [
     dislikes: 110,
     views: 11000
   },
-  {
-    id: 2,
-    title: "GNAT (Directed by Cole Bennett)",
-    thumbnail: "https://i.ytimg.com/vi/EosMazKaPbU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBr2bd2lhBfpOOeEc2lAh86D0fjfw",
-    youtubeURL: "https://www.youtube.com/embed/EosMazKaPbU?list=PLyORnIW1xT6waC0PNjAMj33FdK2ngL_ik",
-    creator: "Eminem",
-    likes: 2200,
-    dislikes: 220,
-    views: 22000
-  },
+
   {
     id: 3,
     title: "AVEC TA ZOUZ (Clip Officiel)",
