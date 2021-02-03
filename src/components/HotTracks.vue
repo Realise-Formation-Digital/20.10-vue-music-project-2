@@ -5,7 +5,9 @@
         <div  v-for="track in tracks" :key="track._id" class="col-md-4">
             <div style="background-color:white;" class="thumbnail-img shadow p-3 mb-5 bg-white rounded">
                 <img :src="track.img" width="250" height="200" classe="shadow-2-strong" />
-                <p><a :href="`https://youtube.com/watch?v=${track.eId.substring(4)}`">{{track.name}}</a></p>
+                <p v-if=" track.eId.length > 30 "><a :href="`${track.eId.substring(track.eId.indexOf('#') + 1)}`">{{track.name}}</a>
+                <p v-else><a :href="`https://youtube.com/watch?v=${track.eId.substring(4)}`">{{track.name}}</a>
+                </p>
             </div>
         </div>
     </div>
