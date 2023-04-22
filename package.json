@@ -15,7 +15,7 @@
     "@progress/kendo-map-vue-wrapper": "^2021.1.119",
     "@progress/kendo-theme-default": "^4.32.0",
     "@progress/kendo-ui": "^2021.1.119",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "core-js": "^3.6.5",
     "serve": "^11.3.2",
     "stylus": "^0.54.8",
